@@ -14,13 +14,7 @@ const AdminHeader = () => {
         <div className="flex items-center justify-end h-16"> {/* Changed to justify-end */}
           {/* Right side - Actions only */}
           <Space className="space-x-4">
-            <Button
-              type="link"
-              icon={<UserOutlined />}
-              className="flex items-center text-gray-600 hover:text-blue-600"
-            >
-              <Link to="/admin/profile">Admin Profile</Link>
-            </Button>
+        
             
             <Button
               type="default"

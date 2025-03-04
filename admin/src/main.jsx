@@ -1,4 +1,3 @@
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
@@ -13,12 +12,24 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store.js";
 import LoginScreen from "./pages/LoginScreen/LoginScreen.jsx";
 import RegisterScreen from "./pages/RegisterScreen/RegisterScreen.jsx";
+import AdminRoute from "./pages/AdminRoute/AdminRoute.jsx";
+import AdminLayout from "./pages/AdminLayout/AdminLayout.jsx";
+import Dashboard from "./pages/Dashboard/Dashboard.jsx";
+import UserManagement from "./pages/UserManagement/UserManagement.jsx";
+import OrderManagement from "./pages/OrderManagement/OrderManagement.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="/login" element={<LoginScreen/>}/>
-      <Route path="/register" element={<RegisterScreen/>}/>
+      <Route path="/login" element={<LoginScreen />} />
+      <Route path="/register" element={<RegisterScreen />} />
+      <Route element={<AdminRoute />}>
+        <Route element={<AdminLayout />}>
+          <Route path="/admin/db" element={<Dashboard />} />
+          <Route path="/admin/user" element={<UserManagement />} />
+          <Route path="/admin/order" element={<OrderManagement/>} />
+        </Route>
+      </Route>
     </Route>
   )
 );

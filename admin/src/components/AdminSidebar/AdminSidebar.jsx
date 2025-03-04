@@ -17,17 +17,17 @@ const AdminSidebar = () => {
         </div>
         <Menu theme='dark' mode='inline' defaultSelectedKeys={['dashboard']} className='mt-4'> 
             <Menu.Item key='products' icon={<ShoppingOutlined />}>
-                <Link to="/admin/products"></Link>
+                <Link to="/admin/db"></Link>
                 Products
             </Menu.Item>
 
             <Menu.Item key='orders' icon={<InboxOutlined />}>
-                <Link to="/admin/orders"></Link>
+                <Link to="/admin/order"></Link>
                 Orders
             </Menu.Item>
 
             <Menu.Item key='Users' icon={<UserOutlined />}>
-                <Link to="/admin/users"></Link>
+                <Link to="/admin/user"></Link>
                 Users
             </Menu.Item>
         </Menu>

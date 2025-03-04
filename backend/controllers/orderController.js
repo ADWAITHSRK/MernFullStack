@@ -1,4 +1,5 @@
 
+import { populate } from "dotenv";
 import Order from "../models/orderModel.js";
 
 const addOrderitems = async (req, res) => {
@@ -81,7 +82,7 @@ const updateOrderToDelivered = async (req, res) => {
 
     if (order) {
       if (req.user.isAdmin) {
-        order.isDeliverd = true;
+        order.isDelivered = true;
         order.deliveredAt = Date.now();
 
         if (order.paymentMethod === "COD" && !order.isPaid) {
@@ -109,9 +110,7 @@ const updateOrderToDelivered = async (req, res) => {
 const getOrders = async (req, res) => {
   try {
     if(req.user.isAdmin){
-    const orders = await Order.find({})
-      .populate("user", "id name")
-      .sort({ createdAt: -1 });
+      const orders = await Order.find({}).sort({ createdAt: -1 });
     res.json(orders);
     }
   } catch (error) {

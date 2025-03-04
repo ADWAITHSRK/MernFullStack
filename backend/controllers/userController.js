@@ -13,6 +13,7 @@ const generateToken = (res, userId) => {
     sameSite: "strict",
     maxAge: 3600000, // 1 hour
   });
+  return token
 };
 
 const register = async (req, res) => {
@@ -54,7 +55,7 @@ const login = async (req, res) => {
     }
 
     generateToken(res, user._id);
-    res.status(200).json({ message: "Logged in successfully", user });
+    res.status(200).json({ message: " Logged in successfully", user });
   } catch (error) {
     console.error("Login error:", error);
     res.status(500).json({ message: error.message });
@@ -115,4 +116,28 @@ const updateProfile = async (req,res) => {
   }
 }
 
-export { login, logout, register, getProfile,updateProfile };
+const getUsers = async (req, res) => {
+  try {
+    const totalUsers = await User.find({});
+    res.status(200).json({ totalUsers });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+const deleteUser = async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const user = await User.findByIdAndDelete(userId); // Use findByIdAndDelete instead
+    
+    if (!user) {
+      return res.status(404).json({ message: "User Not Found" });
+    }
+
+    res.status(200).json({ message: "User Deleted Successfully" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+export { login, logout, register, getProfile,updateProfile ,deleteUser,getUsers};

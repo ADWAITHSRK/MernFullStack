@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Spin } from 'antd';
-import { useLoginMutation, useGetProfileQuery } from '../../redux/featurtes/userApiSlice';
+import { useLoginMutation, useGetProfileQuery } from '../../redux/featurtes/userApiSlice.js';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
@@ -29,7 +29,7 @@ const LoginScreen = () => {
       toast.success("Login successful!", {
         position:'top-center'
       });
-      navigate('/');
+      navigate('/admin/db');
     } catch (err) {
       toast.error("Unable to Login!", {
         position:'top-center'
