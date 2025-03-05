@@ -39,13 +39,13 @@ const getProductById = async (req, res) => {
 const createProduct = async (req,res) => {
 
   try {
-    const {name,price,description,brand,category,countInStock} = req.body
+    const {name,price,description,brand,category,countInStock,rating} = req.body
     const product = new Product ({
-      user : req.user._id,
       name,
       price,
       description,
       brand,
+      rating,
       category,
       countInStock,
       image:req.file ? `uploads/${req.file.filename}` : "",

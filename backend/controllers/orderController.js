@@ -57,17 +57,11 @@ const getMyOrders = async (req, res) => {
 
 const getOrderById = async (req, res) => {
   try {
-    const order = await Order.findById(req.params.id).populate(
-      "user",
-      "name email"
-    );
+    const order = await Order.findById({user:req.user._id})
 
     if (order) {
-      if (req.user._id.toString() === order.user._id.toString()) {
         res.json(order);
-      } else {
-        res.status(401).json({ message: "Not Authorized" });
-      }
+     
     } else {
       res.status(404).json({ message: "Order Not Found" });
     }

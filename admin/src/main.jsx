@@ -17,6 +17,7 @@ import AdminLayout from "./pages/AdminLayout/AdminLayout.jsx";
 import Dashboard from "./pages/Dashboard/Dashboard.jsx";
 import UserManagement from "./pages/UserManagement/UserManagement.jsx";
 import OrderManagement from "./pages/OrderManagement/OrderManagement.jsx";
+import ProductManagementPage from "./pages/ProductControl/ProductControl.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +29,8 @@ const router = createBrowserRouter(
           <Route path="/admin/db" element={<Dashboard />} />
           <Route path="/admin/user" element={<UserManagement />} />
           <Route path="/admin/order" element={<OrderManagement/>} />
+          <Route path="/admin/product" element={<ProductManagementPage/>} />
+
         </Route>
       </Route>
     </Route>

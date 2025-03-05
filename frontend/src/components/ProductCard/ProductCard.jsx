@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
   return (
     <div className="max-w-xs rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white">
       <Link to={`/product/${_id}`}>
-        <img src={image} alt={name} className="w-full h-48 object-cover" />
+        <img src = {`http://localhost:7000/${image}`} alt={name} className="w-full h-48 object-cover" />
       </Link>
       <div className="p-4">
         <Link to={`/product/${_id}`}>

@@ -17,7 +17,7 @@ const AdminSidebar = () => {
         </div>
         <Menu theme='dark' mode='inline' defaultSelectedKeys={['dashboard']} className='mt-4'> 
             <Menu.Item key='products' icon={<ShoppingOutlined />}>
-                <Link to="/admin/db"></Link>
+                <Link to="/admin/product"></Link>
                 Products
             </Menu.Item>
 
