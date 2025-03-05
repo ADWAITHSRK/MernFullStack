@@ -14,8 +14,23 @@ export const productApiSlice = apiSlice.injectEndpoints({
         getTotalCount : builder.query({
             query:()=>`${PRODUCT_URL}/getcount`,
             keepUnusedDataFor:5,
-        })
+        }),
+        createProduct: builder.mutation({
+            query: (data) => ({
+              url: `${PRODUCT_URL}/create`,
+              method: "POST",
+              body: data,
+            }),
+          }),
+        
+          deleteProduct: builder.mutation({
+            query: (productId) => ({
+              url: `${PRODUCT_URL}/delete/${productId}`,
+              method: "POST",
+              body: data,
+            }),
+          }),
     })
 })
 
-export const { useGetProductsQuery, useGetProductDetailsQuery,useGetTotalCountQuery } = productApiSlice;
+export const { useGetProductsQuery, useGetProductDetailsQuery,useGetTotalCountQuery,createProduct } = productApiSlice;
