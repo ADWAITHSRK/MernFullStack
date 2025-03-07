@@ -57,7 +57,7 @@ const getMyOrders = async (req, res) => {
 
 const getOrderById = async (req, res) => {
   try {
-    const order = await Order.findById({user:req.user._id})
+    const order = await Order.findOne({user:req.user._id})
 
     if (order) {
         res.json(order);

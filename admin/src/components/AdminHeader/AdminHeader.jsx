@@ -1,11 +1,18 @@
 import { Button, Space } from 'antd';
 import { UserOutlined, LogoutOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useLogoutMutation } from '../../redux/featurtes/userApiSlice';
+import { toast } from 'react-toastify';
 
 const AdminHeader = () => {
+  const navigate =useNavigate();
+  const [logout] = useLogoutMutation()
   const handleLogout = () => {
-    // Add logout logic here
-    console.log('Logged out');
+    logout()
+    navigate('/login')
+    toast.success("Logged Out ",{
+      position:"top-center"
+    })
   };
 
   return (

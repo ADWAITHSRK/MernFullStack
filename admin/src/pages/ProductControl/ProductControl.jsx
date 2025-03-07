@@ -86,7 +86,7 @@ const ProductManagementPage = () => {
       dataIndex: 'image',
       key: 'image',
       render: (image, record) =>
-        image ? <img src={image} alt={record.name} className="w-16 h-16 object-contain" /> : 'No Image',
+        image ? <img src={`http://localhost:7000/${image}`} alt={record.name} className="w-16 h-16 object-contain" /> : 'No Image',
     },
     {
       title: 'Action',
