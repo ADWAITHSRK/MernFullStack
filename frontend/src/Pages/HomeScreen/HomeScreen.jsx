@@ -24,7 +24,7 @@ const HomeScreen = () => {
     <div className='max-w-7xl flex flex-col justify-center mx-auto py-8'>
       <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6'>
         {paginatedProducts?.map((product) => (
-          <ProductCard key={product._id} product={product} />
+          <ProductCard key={product?._id} product={product?product:[]} />
         ))}
       </div>
       <div className='flex justify-center mt-8'>
