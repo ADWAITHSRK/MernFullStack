@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 
 const PrivateRoute = ({children}) => {
   const { data: profile, isLoading } = useGetProfileQuery();
-  console.log("prtctd",profile.user);
+  console.log("prtctd",profile?.user);
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
-  if ( !profile.user) {
+  if ( !profile?.user) {
     return <Navigate to="/login" replace />;
   }
 

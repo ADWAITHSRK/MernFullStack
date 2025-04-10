@@ -8,9 +8,9 @@ import { promisify } from "util";
 dotenv.config();
 
 cloudinary.config({
-  cloud_name: "dwkczyfi5",
-  api_key: "256397954859414",
-  api_secret: "JiMtww8E0JpfBGCmIXzZ6nne_pI",
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
 });
 
 // Create a promisified version of the upload_stream function

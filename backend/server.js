@@ -9,7 +9,10 @@ import userRoutes from './routes/userRoutes.js'
 import orderRoutes from './routes/orderRoutes.js'
 import errorHandler from './middleware/errorMiddleware.js';
 import path from "path";
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config();
 const port = 7000;
@@ -23,6 +26,7 @@ const corsOptions = {
   
 connectDB();
 
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
 app.use(cors(corsOptions));
 app.use("/uploads", express.static(path.join(path.resolve(), "uploads")));
 
@@ -34,6 +38,10 @@ app.use(cookieParser());
 app.get('/',(req,res)=>{
     console.log('Running....')
 })
+
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../frontend/dist/index.html'));
+  });
 
 
 app.use('/api/products', productRoutes);
