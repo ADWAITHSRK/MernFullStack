@@ -30,7 +30,7 @@ const ProfileScreen = () => {
             size={100}
             src={
               profile?.user?.profilePicture
-                ? `http://localhost:7000/${profile.user.profilePicture}`
+                ? profile.user.profilePicture
                 : undefined
             }
             icon={!profile?.user?.profilePicture && <UserOutlined />}

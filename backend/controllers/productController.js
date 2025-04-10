@@ -40,7 +40,9 @@ const createProduct = async (req,res) => {
 
   try {
     const {name,price,description,brand,category,countInStock,rating} = req.body
-    const product = new Product ({
+    const cloudinaryUrls = req.body.cloudinaryUrls || [];
+
+      const product = new Product ({
       name,
       price,
       description,
@@ -48,7 +50,7 @@ const createProduct = async (req,res) => {
       rating,
       category,
       countInStock,
-      image:req.file ? `uploads/${req.file.filename}` : "",
+      image:cloudinaryUrls.length>0 ? cloudinaryUrls[0] : "",
 
     })
     const createdProduct = await product.save();

@@ -46,7 +46,7 @@ const ProductScreen = () => {
         <div className="grid md:grid-cols-3 gap-6 ">
           <div className="md:col-span-1 bg-white p-4 rounded-lg shadow-md mr-5">
             <Image
-              src={`http://localhost:7000/${product.image}`}
+              src={product.image}
               alt={product.name}
               className="w-full h-auto object-contain rounded-lg"
             />

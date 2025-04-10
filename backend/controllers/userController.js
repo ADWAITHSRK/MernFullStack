@@ -29,7 +29,8 @@ const register = async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const user = await User.create({ name, email, password: hashedPassword ,profilePicture : req.file ? `uploads/${req.file.filename}` : "" });
+    const cloudinaryUrls = req.body.cloudinaryUrls || [];
+    const user = await User.create({ name, email, password: hashedPassword ,profilePicture : cloudinaryUrls.length > 0 ?  cloudinaryUrls[0] : "" });
 
     if (user) {
       generateToken(res, user._id);
@@ -102,9 +103,11 @@ const updateProfile = async (req,res) => {
       user.name = name
 
     }
+    const cloudinaryUrls = req.body.cloudinaryUrls || [];
 
-    if(req.file) {
-      user.profilePicture = req.file.path
+
+    if(cloudinaryUrls.length>0) {
+      user.profilePicture = cloudinaryUrls[0]
     }
 
     await user.save()
@@ -128,7 +131,7 @@ const getUsers = async (req, res) => {
 const deleteUser = async (req, res) => {
   try {
     const { userId } = req.params;
-    const user = await User.findByIdAndDelete(userId); // Use findByIdAndDelete instead
+    const user = await User.findByIdAndDelete(userId); 
     
     if (!user) {
       return res.status(404).json({ message: "User Not Found" });

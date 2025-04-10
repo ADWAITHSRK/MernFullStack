@@ -23,9 +23,9 @@ const cartSlice = createSlice({
           x.product === existItem.product ? { ...x, qty: x.qty + 1 } : x
         );
       } else {
-        // Store product ID and necessary details
+      
         state.cartItems.push({
-          product: item._id, // Store product ID here
+          product: item._id, 
           name: item.name,
           image: item.image,
           price: item.price,
