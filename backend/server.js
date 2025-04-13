@@ -14,7 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 dotenv.config();
-const port = process.env.PORT || 7000; 
+const port = process.env.PORT || 10000; 
 const app = express();
 
 const corsOptions = {
