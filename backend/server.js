@@ -53,6 +53,6 @@ app.use('/api/order', orderRoutes);
 
 app.use(errorHandler);
 
-app.listen(port,()=>{
+app.listen(port,'0.0.0.0',()=>{
     console.log(`server is running on port ${port} `)
 })
