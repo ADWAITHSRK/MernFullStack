@@ -100,6 +100,7 @@ cd MernFullStack
 
 ```bash
 # Install backend dependencies
+cd frontend
 npm install
 
 # Install frontend dependencies
