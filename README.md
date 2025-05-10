@@ -1,6 +1,6 @@
 
 
-# 🛒 E-Commerce API
+# 🛒 E-Commerce 
 
 A RESTful API backend for an e-commerce application built with **Node.js**, **Express**, and **MongoDB**. This API supports user authentication, product management, and order processing.
 
