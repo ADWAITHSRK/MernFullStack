@@ -77,6 +77,48 @@ A RESTful API backend for an e-commerce application built with **Node.js**, **Ex
 | GET    | `/api/orders/gettotalorders`  | Get total order count   | No            |
 | GET    | `/api/orders/getorder`        | Get a specific order    | Yes           |
 
----
+
+
+
+## Getting Started
+
+These instructions will help you set up the project on your local machine for development and testing purposes.
+Prerequisites
+
+Node.js and npm installed on your machine
+
+## Installation
+
+Clone the repository
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name
+
+Install backend dependencies
+npm install
+
+Install frontend dependencies
+cd frontend
+npm install
+cd ..
+
+
+
+## Usage
+Development Mode
+Run both frontend and backend:
+npm run dev
+
+Run backend only:
+npm run server
+
+Run frontend only:
+npm run client
+Production Mode
+
+Create a production build:
+npm run build
+
+Start the production server:
+npm start
 
 
