@@ -34,6 +34,7 @@ A RESTful API backend for an e-commerce application built with **Node.js**, **Ex
 ## 🛠️ Tech Stack
 
 * **Backend:** Node.js, Express.js
+* **Backend:** React.js, Redux.js ,Tailwind
 * **Database:** MongoDB with Mongoose ODM
 * **Authentication:** JWT, bcrypt.js
 * **Image Storage:** Cloudinary
