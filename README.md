@@ -79,46 +79,61 @@ A RESTful API backend for an e-commerce application built with **Node.js**, **Ex
 
 
 
-
-## Getting Started
-
-These instructions will help you set up the project on your local machine for development and testing purposes.
-Prerequisites
-
-Node.js and npm installed on your machine
-
 ## Installation
 
-Clone the repository
-git clone https://github.com/ADWAITHSRK/MernFullStack.git
-cd your-repo-name
+### Prerequisites
 
-Install backend dependencies
+- Node.js (v16 or higher)
+- MongoDB or MongoDB Atlas account
+- Cloudinary account (for image uploads)
+- PayPal developer account (for payment integration)
+
+### Setup
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/ADWAITHSRK/MernFullStack.git
+cd proshop
+```
+
+
+2. **Install dependencies for both frontend and backend**
+
+```bash
+# Install backend dependencies
 npm install
 
-Install frontend dependencies
+# Install frontend dependencies
 cd frontend
 npm install
 cd ..
+```
 
 
+## Running the Application
 
-## Usage
-Development Mode
-Run both frontend and backend:
+### Development Mode
+
+```bash
+# Run frontend & backend concurrently
 npm run dev
 
-Run backend only:
+# Run backend only
 npm run server
 
-Run frontend only:
+# Run frontend only
 npm run client
-Production Mode
+```
 
-Create a production build:
+### Production Mode
+
+```bash
+# Build frontend
 npm run build
 
-Start the production server:
+# Start production server
 npm start
+```
 
 
