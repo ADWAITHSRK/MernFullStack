@@ -92,7 +92,7 @@ A RESTful API backend for an e-commerce application built with **Node.js**, **Ex
 
 ```bash
 git clone https://github.com/ADWAITHSRK/MernFullStack.git
-cd proshop
+cd MernFullStack
 ```
 
 
