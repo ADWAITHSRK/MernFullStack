@@ -37,8 +37,6 @@ A RESTful API backend for an e-commerce application built with **Node.js**, **Ex
 * **Database:** MongoDB with Mongoose ODM
 * **Authentication:** JWT, bcrypt.js
 * **Image Storage:** Cloudinary
-* **Security:** HTTP-only cookies, secure routing
-
 ---
 
 ## 🔌 API Endpoints
