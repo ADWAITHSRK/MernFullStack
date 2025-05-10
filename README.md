@@ -79,5 +79,4 @@ A RESTful API backend for an e-commerce application built with **Node.js**, **Ex
 
 ---
 
-Let me know if you’d like a logo badge, deployment guide, or Postman collection added to this!
 
