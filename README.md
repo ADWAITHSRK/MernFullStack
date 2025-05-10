@@ -1,6 +1,4 @@
-Here is a **clean and professional version** of your E-Commerce API GitHub README section:
 
----
 
 # 🛒 E-Commerce API
 
