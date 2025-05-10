@@ -82,7 +82,7 @@ A RESTful API backend for an e-commerce application built with **Node.js**, **Ex
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
+- Node.js (v24 or higher)
 - MongoDB or MongoDB Atlas account
 - Cloudinary account (for image uploads)
 
