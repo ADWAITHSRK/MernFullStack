@@ -90,7 +90,7 @@ Node.js and npm installed on your machine
 ## Installation
 
 Clone the repository
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/ADWAITHSRK/MernFullStack.git
 cd your-repo-name
 
 Install backend dependencies
