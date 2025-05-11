@@ -1,7 +1,7 @@
 ## 🚀 Live Demo
 
 You can check out the live version of this project here with credential "email:dev@mail.com password:dev" :  
-🔗 [Live Site - MERN Fullstack App](https://mernfullstack-client.onrender.com/profile)
+🔗 [Live Site - MERN Fullstack App](https://mernfullstack-client.onrender.com)
 
 # 🛒 E-Commerce 
 
