@@ -26,9 +26,7 @@ const corsOptions = {
 connectDB();
 
 // Serve static files from the frontend build directory
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
 app.use(cors(corsOptions));
-app.use("/uploads", express.static(path.join(path.resolve(), "uploads")));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -39,8 +37,6 @@ app.use('/api/products', productRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/order', orderRoutes);
 
-const frontendPath = path.resolve(__dirname, '../frontend/dist');
-app.use(express.static(frontendPath));
 
 // Handle frontend routes
 app.get('*', (req, res) => {
