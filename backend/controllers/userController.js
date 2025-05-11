@@ -8,11 +8,12 @@ const generateToken = (res, userId) => {
   });
 
   res.cookie("token", token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production", // Secure in production
-    sameSite: "strict",
-    maxAge: 3600000, // 1 hour
-  });
+  httpOnly: true,
+  secure: true,        // must be true in production with sameSite: 'none'
+  sameSite: "none",    // allow cross-origin requests
+  maxAge: 3600000,
+});
+
   return token
 };
 
