@@ -18,7 +18,7 @@ const port = process.env.PORT || 7000;
 const app = express();
 
 const corsOptions = {
-  origin: ['https://mernfullstack-frontend-gqt2.onrender.com/'], 
+  origin: ['https://mernfullstack-frontend-gqt2.onrender.com','http://localhost:5173', 'http://localhost:5174',], 
   credentials: true,
   optionsSuccessStatus: 200
 };
