@@ -39,12 +39,14 @@ app.use('/api/products', productRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/order', orderRoutes);
 
-// Serve the frontend index.html for all other routes
+const frontendPath = path.resolve(__dirname, '../frontend/dist');
+app.use(express.static(frontendPath));
+
+// Handle frontend routes
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../frontend/dist/index.html'));
+  res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
-// Error handling middleware
 app.use(errorHandler);
 
 app.listen(port, '0.0.0.0', () => {
