@@ -18,7 +18,7 @@ const port = process.env.PORT || 7000;
 const app = express();
 
 const corsOptions = {
-  origin: ['https://mernfullstack-frontend-gqt2.onrender.com',], 
+  origin: ['https://mern-full-stack-frontend-six.vercel.app',], 
  credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
