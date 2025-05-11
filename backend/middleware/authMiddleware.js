@@ -3,18 +3,27 @@ import User from "../models/userModel.js";
 
 const authMiddleware = async (req, res, next) => {
   try {
-    const token = req.cookies.token;
+    const token = req.cookies.token || 
+                 (req.headers.authorization && req.headers.authorization.startsWith('Bearer') 
+                  ? req.headers.authorization.split(' ')[1] : null);
 
     if (!token) {
-      return res.status(401).json({ message: "Authorzation Failes" });
+      return res.status(401).json({ message: "Authorization Failed: No token provided" });
     }
 
-    const decoded = jwt.verify(token,"abcdef");
+    const secret = process.env.JWT_SECRET || "abcdef";
+    const decoded = jwt.verify(token, secret);
 
-    req.user = await User.findById(decoded.id).select("-password");
+    const user = await User.findById(decoded.id).select("-password");
+    if (!user) {
+      return res.status(401).json({ message: "User not found" });
+    }
+
+    req.user = user;
     next();
   } catch (error) {
-    res.status(401).json({ message: "Not Authorized Token Failed" });
+    console.error("Auth middleware error:", error);
+    res.status(401).json({ message: "Not Authorized: Token verification failed" });
   }
 };
 
