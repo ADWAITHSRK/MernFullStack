@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [tailwindcss(),react()],
   server: {
     proxy: {
-      '/api': 'http://localhost:7000'
+      '/api': 'https://mernfullstack-backend-t7mc.onrender.com'
     }
   }
 })
