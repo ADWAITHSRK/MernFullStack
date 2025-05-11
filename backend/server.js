@@ -18,7 +18,7 @@ const port = process.env.PORT || 7000;
 const app = express();
 
 const corsOptions = {
-  origin: 'https://mernfullstack-client.onrender.com/',
+  origin: 'https://mernfullstack-client.onrender.com',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
